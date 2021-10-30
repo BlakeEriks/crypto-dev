@@ -15,7 +15,3 @@ key_part += 'y'
 
 key_part = key_part * 5 + key_part[:2]
 print('Flag is: ' + pwn.xor(key_part.encode(), encoded_bytes[:len(key_part)]).decode())
-
-# for i in range(50):
-#     print(pwn.xor(bytes.fromhex(encoded), flag_bytes).decode('utf-8'))
-#     flag_bytes += 'x';
