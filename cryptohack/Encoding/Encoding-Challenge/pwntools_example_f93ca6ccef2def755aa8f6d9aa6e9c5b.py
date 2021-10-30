@@ -29,14 +29,14 @@ while True:
 
     received = json_recv()
 
+    if 'flag' in received:
+        print(received['flag'])
+        break
+
     print("Received type: ")
     print(received["type"])
     print("Received encoded value: ")
     print(received["encoded"])
-
-    if 'flag' in received:
-        print(received['flag'])
-        break
 
     encoded = received["encoded"]
     type = received["type"]
@@ -55,7 +55,8 @@ while True:
         decoded = ''.join([chr(b) for b in encoded])
 
     to_send = {
-    "decoded": decoded
+        "decoded": decoded
     }
+
     print("Sending: " + str(decoded))
     json_send(to_send)
