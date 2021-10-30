@@ -19,4 +19,4 @@ res = ''
 for c in string:
     res += pwn.xor(ord(c), xor_target).decode('utf-8')
 
-print('Flag is: crypto{' + res + '}')
+print('Flag is: ' + res )
